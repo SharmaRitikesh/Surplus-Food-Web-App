@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Listings</title>
+<link rel="stylesheet" href="new.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <h1>Food Listings</h1>
+  </div>
+</nav>
+<main class="main-container">
+  <!-- Food item template -->
+  <div class="food-item">
+    <img src="left-image.jpg" alt="Dish Image" class="food-img-left">
+    <div class="food-info">
+      <h2 class="dish-name">Dish Name</h2>
+      <p class="dish-desc">A delicious description of the dish.</p>
+      <p class="dish-meta">Location: XYZ | Quantity: 10 | Expiry: Tomorrow | Closing Time: 10 PM</p>
+      <button class="btn-claim">Claim</button>
+    </div>
+    <img src="right-image.jpg" alt="Location Image" class="food-img-right">
+  </div>
+  <!-- Repeat the above block for each food item -->
+</main>
+
+<div id="claim-dialog" class="modal">
+  <!-- Content will be dynamically added by JavaScript -->
+</div>
+
+<script>
+document.querySelectorAll('.btn-claim').forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.getElementById('claim-dialog');
+    modal.innerHTML = '<div class="modal-content"><p>Please wait while we are fetching the details.</p></div>';
+    modal.style.display = 'block';
+    setTimeout(() => {
+      modal.innerHTML = '<div class="modal-content"><p>Claimed.<br>You can proceed to the location and claim the food.</p></div>';
+    }, 1000);
+  });
+});
+
+window.addEventListener('click', event => {
+  const modal = document.getElementById('claim-dialog');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Saver - Save Food, Save Lives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" href= "index.html">Food Saver</div>
+        <ul class="menu">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="how.html">How It Works</a></li>
+            <li><a href = "contactt.html" >Contact Us</a></li>
+       <!-- <button onclick="showModal('signUpModal')">Register</button>href="#contact"-->
+        <li style=" transition: transform 0.3s ease; padding: 0 16px; transition: transform 300ms ease-in-out;"><a href="#signup" onclick="showModal('signUpModal')" class="button button-primary button-rounded button-flat signup" style="transform: scale(1); transition: transform 300ms ease-in-out;">Sign in</a></li>
+        <style>
+          .signup:hover {
+            transform: scale(1.05);
+          }
+        </style>
+       <!-- Sign Up Modal -->
+       <div id="signUpModal" class="modal" style="background: linear-gradient(135deg, #71b7e6, #5cb85c);">
+         <div class="modal-content" style="background: rgba(255, 255, 255, 0.7); border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); padding: 20px;">
+           <h2 class="modal-heading" style="color: #404040; font-size: 24px; font-weight: 500;">Create a profile</h2>
+           <form action="/signup" method="post" class="modal-form" style="display: flex; flex-direction: column; gap: 16px;">
+             <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+               <label for="newUsername" style="color: #404040; font-size: 16px; font-weight: 500;">Username</label>
+               <input type="text" id="newUsername" name="newUsername" style="background: rgba(255, 255, 255, 0.8); border: none; border-radius: 5px; color: #404040; font-size: 16px; padding: 8px; width: 100%;">
+             </div>
+             <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+               <label for="newPassword" style="color: #404040; font-size: 16px; font-weight: 500;">Password</label>
+               <input type="password" id="newPassword" name="newPassword" style="background: rgba(255, 255, 255, 0.8); border: none; border-radius: 5px; color: #404040; font-size: 16px; padding: 8px; width: 100%;">
+             </div>
+             <div class="input-group" style="display: flex; justify-content: flex-end;">
+               <button type="submit" class="button button-primary button-rounded button-flat" style="background: #6978c1; border-radius: 5px; color: white; padding: 12px 24px; transform: scale(1); transition: transform 300ms ease-in-out; href='signin.html'">
+                 Sign Up
+               </button>
+             </div>
+              <div class="input-group" style="display: flex; justify-content: center;">
+               <span class="text-xs text-gray-light" style="color: #404040; font-size: 12px;">
+                 By signing up, you agree to our terms of service and privacy policy.
+               </span>
+             </div>
+           </form>
+         </div>
+       </div>
+    </div>
+
+        </ul>
+    </nav>
+    <script>
+        // Function to show modal
+        function showModal(modalId) {
+          var modal = document.getElementById(modalId);
+          modal.style.display = "block";
+        }
+      </script>
+    <section class="hero">
+        <h1 style="color: black;">Welcome to Food Saver</h1>
+        <p style="color: black;">Join us in our mission to reduce food waste and help those in need.</p>
+        <button class="button" onclick="location.href='signin.html'">Browse local restaurants</button>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <img src="feature1.png" alt="Feature 1" >
+            <h3>Find Surplus Food</h3>
+            <p>Locate nearby places with surplus food available for pickup.</p>
+        </div>
+        <div class="feature">
+            <img src="feature2.png" alt="Feature 2">
+            <h3>Share Excess Food</h3>
+            <p>Share your excess food with local communities and organizations.</p>
+        </div>
+        <div class="feature">
+            <img src="feature3.png" alt="Feature 3">
+            <h3>Connect with Others</h3>
+            <p>Connect with like-minded individuals and organizations.</p>
+        </div>
+    </section>
+    <footer>
+        © 2024 Food Saver. All rights reserved.
+    </footer>
+</body>
+</html>
